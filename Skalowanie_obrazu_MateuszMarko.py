@@ -17,8 +17,6 @@ def interpolacja_sasiada(obraz, wspolczynnik_skalowania):
         for j in range(nowa_szerokosc):
             x = int(j / wspolczynnik_skalowania)
             y = int(i / wspolczynnik_skalowania)
-
-            # Interpolacja sąsiada
             obraz_skalowany[i, j] = obraz[y, x]
 
     return obraz_skalowany
