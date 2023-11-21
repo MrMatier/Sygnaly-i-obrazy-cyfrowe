@@ -34,11 +34,11 @@ def interpolacja_dwuliniowa(obraz, k_skalowania):
             x0, y0 = int(x), int(y)
             x1, y1 = min(x0 + 1, szerokosc - 1), min(y0 + 1, wysokosc - 1)
             fx, fy = x - x0, y - y0
-            for c in range(3):  # Trzy kanały kolorów
+            for c in range(3): 
                 interp_wartosc = (1 - fx) * (1 - fy) * obraz[y0, x0, c] + \
-                                 fx * (1 - fy) * obraz[y0, x1, c] + \
-                                 (1 - fx) * fy * obraz[y1, x0, c] + \
-                                 fx * fy * obraz[y1, x1, c]
+                fx * (1 - fy) * obraz[y0, x1, c] + \
+                (1 - fx) * fy * obraz[y1, x0, c] + \
+                fx * fy * obraz[y1, x1, c]
                 obraz_skalowany[i, j, c] = int(interp_wartosc)
 
     return obraz_skalowany
